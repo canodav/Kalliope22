@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 18: expected statement.
+    renpy.movie_cutscene("ACTO1-2.mp4")
+                                       ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Sun Feb 26 22:43:40 2023
