@@ -15,13 +15,10 @@ image space = "space.jpg"
 
 # El juego comienza aquí.
 
-image video_intro = Movie(play="ACTO1-2.mp4", size=(1920, 1080))
-
 label start:
 
-    show video_intro:
-        xpos 0 ypos 0
-
+    $ renpy.movie_cutscene("ACTO1-2.ogv")
+    
     # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
     # defecto. Es posible añadir un archivo en el directorio 'images' con el
     # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
@@ -140,6 +137,30 @@ label captain_lespere_3:
     return
 
 label capitan_hollis_1:
-    "NO DISPONIBLE"
+    
+    menu capitan_hollis_q0:
+        hollis "¿Estas bien? ¿Creo que nadie ha tenido tiempo de ponerse el anclaje?"
 
+        "Ha pasado todo demasiado rapido. No entiendo nada":
+            jump capitan_hollis_2
+        "No pensamos en eso ahora mismo. ¿vale? Necesitamos soluciones":
+            hollis "Nos vamos a morir!!!!!!!!!"
+            return
+    
     return
+
+label capitan_hollis_2:
+
+    menu capitatan_hollis_q1:
+        hollis "Creo que nos ha dado un meteorito. ¡¡Joder!!"
+
+        "Respirar, alterarte drenara tu oxigeno":
+            hollis "Dejame, ¿Ahora si te preocupa mi oxigeno?"
+            capitan "Anda calla tontito"
+
+        "No vi nada, se estaba reparando el sensor todavia":
+            hollis "Podriamos no haber tenido que repararlo en primer lugar"
+            capitan "¿A que te refieres?"
+    
+
+

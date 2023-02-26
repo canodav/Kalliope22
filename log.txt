@@ -1,4 +1,4 @@
-Sun Feb 26 22:47:21 2023
+Sun Feb 26 23:13:44 2023
 Linux-5.19.0-32-generic-x86_64-with-glibc2.35
 Ren'Py 8.0.3.22090809
  
@@ -6,9 +6,9 @@ Ren'Py 8.0.3.22090809
 Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
 Loader init took 0.00s
-Loading error handling took 0.02s
-Loading script took 0.10s
-Loading save slot metadata. took 0.00s
+Loading error handling took 0.03s
+Loading script took 0.11s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('/home/david/Documentos/renpy-8.0.3-sdk/lib/py3-linux-x86_64/libsteam_api.so: cannot open shared object file: No such file or directory')
 Running init code took 0.03s
@@ -19,7 +19,7 @@ Backing up script files to '/home/david/.renpy/backups/Kalliope22':
 Dump and make backups. took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.01s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
@@ -29,7 +29,7 @@ Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.02s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.01s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
@@ -47,3 +47,10 @@ Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1280, 720) physical=(1846, 1016) drawable=(1846, 1016)
 Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
