@@ -6,23 +6,72 @@ define applegate = Character("Applegate")
 define capitan = Character("Capitan")
 define hollis = Character("Hollis")
 define lespere = Character("Lespere")
+
 image lespere = "3.png"
 image applegate = "2.png"
 image capitan = "1.png"
 image hollis = "4.png"
 image space = "space.jpg"
 
+#Reduir la mida del avatar.
+transform set_hollis:
+    xalign 0.7
+    yalign 0.7
+    zoom 0.5
+
+transform set_lespere:
+    xalign 0.9
+    yalign 0.7
+
+    zoom 0.5
+
+
+# Fade to black and back.
+define fade = Fade(0.5, 0.0, 0.5)
+
+# Hold at black for a bit.
+define fadehold = Fade(0.5, 1.2, 0.5)
+
+# Camera flash - quickly fades to white, then back to the scene.
+define flash = Fade(0.1, 1.2, 0.5, color="#fff")
 
 # El juego comienza aquí.
 
+
 label start:
+    scene intro
 
+    #Primera cinematica
     $ renpy.movie_cutscene("ACTO1-2.ogv")
-    
-    # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
-    # defecto. Es posible añadir un archivo en el directorio 'images' con el
-    # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
+    #fade efect
+    with fade
 
+    #Primera cinematica
+    $ renpy.movie_cutscene("ACTO1-2.ogv")
+    #fade final efect
+    with fadehold
+
+    
+    jump test1
+
+#label menu:
+
+label test1: 
+    scene wa
+
+    show hollis at set_hollis
+    show lespere at set_lespere
+    with moveinright
+    lespere "Dios, estoy dando vueltas. -Alarma: *suena*"(multiple=2)
+    hollis "Ho▃l█a? Alguien me░░ re░ibe?"(multiple=2)
+
+    hollis "1"
+    hollis "2"
+    hollin "3"
+
+
+
+label t0:
     scene space
 
     # Muestra un personaje: Se usa un marcador de posición. Es posible
