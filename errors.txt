@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 77: end of line expected.
-    text "Lespere" style p_hollis 
-                   ^
+File "game/script.rpy", line 33: expected ':' not found.
+    transform set_capitan
+                         ^
+
+File "game/script.rpy", line 38: expected ':' not found.
+    transform set_applegate
+                           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Mar  2 13:20:21 2023
+Thu Mar  2 13:44:03 2023

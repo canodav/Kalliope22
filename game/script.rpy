@@ -2,11 +2,29 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
-define applegate = Character("Applegate")
-define capitan = Character("Capitan")
-define hollis = Character("Hollis")
-define lespere = Character("Lespere")
+define applegate = Character("Applegate", color = "#e8ef27d9" )
+define capitan = Character("Capitan", color = "#25c20dfd" )
+define hollis = Character("Hollis", color = "#e13333fd")
+define lespere = Character("Lespere", color = "#1474dafd")
 
+#ESTILS PERSONATGES: 
+style s_hollis is text:
+    size 30
+    color "#e13333fd"  
+
+style s_lespere is text:
+    size 30
+    color "#1474dafd"  
+
+style s_capitan is text:
+    size 30
+    color "#25c20dfd" 
+
+style s_applegate is text:
+    size 30
+    color "#e8ef27d9"   
+
+#AVATARS PERSONATGES
 image lespere = "3.png"
 image applegate = "2.png"
 image capitan = "1.png"
@@ -22,9 +40,17 @@ transform set_hollis:
 transform set_lespere:
     xalign 0.9
     yalign 0.7
-
     zoom 0.5
 
+transform set_capitan:
+    xalign 0.2
+    yalign 0.7
+    zoom 0.5
+
+transform set_applegate:
+    xalign 0.9
+    yalign 0.7
+    zoom 0.5
 
 # EFECTES: 
 # Fade to black and back.
@@ -35,18 +61,13 @@ define fadehold = Fade(0.5, 1.2, 0.5)
 define flash = Fade(0.1, 1.2, 0.5, color="#fff")
 
 
-#ESTILS PERSONATGES: 
-style p_hollis is text:
-    size 20
-    color "#fd1010fd"  
-
 #VIDEOS INTRODUCCIÓ: 
 image anim1 = Movie(channel="movie_dp", play = "ACTO1-2.ogv", loop = False)
 
-
+######################################################################################################
 # El juego comienza aquí.
 label start:
-    scene space
+    scene intro
     jump test1
 
     #Primera cinematica
@@ -56,7 +77,7 @@ label start:
 
     #Segunda cinematica
     show anim1
-    "Lo tenemos. Ponemos rumbo de vuelta a casa. {w=1.5}{nw}"
+    "Lo tenemos. Ponemos rumbo de vuelta a casa. {w=2}{nw}"
 
     #fade final efect
     with fadehold
@@ -64,11 +85,15 @@ label start:
 
     jump test1
 
+
+######################################################################################################
 #label menu:
 
 
+
+######################################################################################################
 label test1: 
-    scene space
+    scene wa
 
     show hollis at set_hollis 
     show lespere at set_lespere 
@@ -84,6 +109,7 @@ label test1:
     jump t0
 
 
+######################################################################################################
 
 label t0:
     scene space
