@@ -67,7 +67,7 @@ define gui.interface_text_font = "DejaVuSans.ttf"
 define gui.text_size = 22
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 25
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 22
@@ -95,7 +95,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 175
+define gui.textbox_height = 190
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.

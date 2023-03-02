@@ -1,7 +1,6 @@
 ﻿# Coloca el código de tu juego en este archivo.
 
 # Declara los personajes usados en el juego como en el ejemplo:
-
 define applegate = Character("Applegate", color = "#e8ef27d9" )
 define capitan = Character("Capitan", color = "#25c20dfd" )
 define hollis = Character("Hollis", color = "#e13333fd")
@@ -9,19 +8,19 @@ define lespere = Character("Lespere", color = "#1474dafd")
 
 #ESTILS PERSONATGES: 
 style s_hollis is text:
-    size 30
+    size gui.name_text_size
     color "#e13333fd"  
 
 style s_lespere is text:
-    size 30
+    size gui.name_text_size
     color "#1474dafd"  
 
 style s_capitan is text:
-    size 30
+    size gui.name_text_size
     color "#25c20dfd" 
 
 style s_applegate is text:
-    size 30
+    size gui.name_text_size
     color "#e8ef27d9"   
 
 #AVATARS PERSONATGES
@@ -99,8 +98,8 @@ label test1:
     show lespere at set_lespere 
     with moveinright
 
-    "{=p_hollis}Lespere: {/=p_hollis} Dios, estoy dando vueltas. -Alarma: *suena*{fast}
-    \n\n{color=#0000ffff}Hollis: {/color} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
+    "{=s_lespere}Lespere: {/=s_lespere} Dios, estoy dando vueltas. -Alarma: *suena*{fast}
+    \n\n{=s_hollis}Hollis: {/=s_hollis} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
 
     hollis "1"
     hollis "2"
