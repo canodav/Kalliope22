@@ -46,7 +46,7 @@ image anim1 = Movie(channel="movie_dp", play = "ACTO1-2.ogv", loop = False)
 
 # El juego comienza aquí.
 label start:
-    scene intro
+    scene space
     jump test1
 
     #Primera cinematica
@@ -68,7 +68,7 @@ label start:
 
 
 label test1: 
-    scene wa
+    scene space
 
     show hollis at set_hollis 
     show lespere at set_lespere 
