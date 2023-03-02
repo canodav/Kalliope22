@@ -32,6 +32,7 @@ image hollis = "4.png"
 # BACKGROUND IMAGES
 image space = "space.jpg"
 image space_1 = "space_1.png"
+image space_intro = "space_3.png"
 
 #Reduir la mida del avatar.
 transform set_hollis:
@@ -87,7 +88,9 @@ label start:
 
 
 ######################################################################################################
-#label menu:
+label menu0:
+    scene space_intro
+
 
 
 ######################################################################################################
@@ -116,11 +119,11 @@ label t0:
 
     hide hollis
 
-    "{=s_capitan}Capitan: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}"
+    "{=s_capitan}Capitán: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}"
 
     show applegate at set_applegate
     
-    "{=s_capitan}Capitan: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}
+    "{=s_capitan}Capitán: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}
     \n\n{=s_applegate}Applegate: {/=s_applegate} Aa█aaa░█aaa██░█aa"
 
     hide applegate
@@ -130,27 +133,27 @@ label t0:
 
     show applegate at set_applegate
     "{=s_lespere}Lespere: {/=s_lespere} ¿Capitán? ¿Applegate? ¿Woode?{fast}
-    \n\n{=s_applegate}Applegate: {/=s_applegate} fjnagmjsimg—-------"
+    \n\n{=s_applegate}Applegate: {/=s_applegate} fjnagmjsimg—-----█"
 
+    hide lespere
     hide applegate
 
     show hollis at set_hollis
+    "{=s_hollis}Hollis: {/=s_hollis} Un po█co mal, pe█ro te escucho{fast}"
 
-    hollis "Un po█co mal, pe█ro te escucho"
-    
-    capitan "te escucho! Te escucho!"
+    "{=s_hollis}Hollis: {/=s_hollis} Un po█co mal, pe█ro te escucho{fast}
+    \n\n{=s_capitan}Capitán: {/=s_capitan} te escucho! Te escucho!{fast}"
 
     hide hollis
+    "\n\n{=s_capitan}Capitán: {/=s_capitan} te escucho! Te escucho!{fast}"
 
-    show lespere at right
+    show lespere at set_lespere
+    "{=s_lespere}Lespere: {/=s_lespere} ¿Me recibes?{fast}"
+    
+    show hollis at set_hollis
+    "{=s_lespere}Lespere: {/=s_lespere} ¿Me recibes?{fast}
+    \n\n{=s_hollis}Hollis: {/=s_hollis} ¿Mejor?{fast}"
 
-    lespere "¿Me recibes?"
-
-    hide lespere
-
-    show hollis at right
-
-    hollis "¿Mejor?"
 
     menu t0_1:
         "Que contestas"
