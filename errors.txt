@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 18: expected statement.
-    movie_image:
-               ^
+File "game/script.rpy", line 77: end of line expected.
+    text "Lespere" style p_hollis 
+                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Feb 26 22:53:49 2023
+Thu Mar  2 13:20:21 2023

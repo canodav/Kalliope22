@@ -117,6 +117,19 @@ screen say(who, what):
         add SideImage() xalign 0.0 yalign 1.0
 
 
+screen multiple_say(who, what, multiple):
+    if multiple[0] == 1:
+        style_prefix "say" 
+    elif multiple[0] == 2:
+        style_prefix "multiple2_say" 
+    
+    #add "gui/chatbg.png window:
+    window:
+        if who is not None:
+            text who id "who" style "namebox"
+        text what id "what" style "namebox"
+
+
 ## Make the namebox available for styling through the Character object.
 init python:
     config.character_id_prefixes.append('namebox')
@@ -129,6 +142,41 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
+#RECORDA:
+#       gui.init(1280, 720)
+##      The height of the textbox containing dialogue.
+#       define gui.textbox_height = 185 entre /2 es 92,5 aprox a 95.
+
+#CUSTOM DOUBLE SAY WINDOW
+#style say_window:
+    #xalign 0.5
+    #xpos 780 # relative to left
+    #yalign 1.0
+    #xysize (1050, 95)
+    #ysize gui.textbox_height
+
+    #xfill True
+    # background "#1477e8" 
+
+##style multiple2_say_window:
+    #xpos 780 # relative to left,top
+#   yalign 1.0
+#   xysize (1050, 95)
+#   background "#6d1313" 
+#   xfill True
+
+
+style multiple2_say_window:
+    ysize 95
+
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    #ysize gui.textbox_height
+
+    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
+
 
 style window:
     xalign 0.5
@@ -137,6 +185,7 @@ style window:
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
 
 style namebox:
     xpos gui.name_xpos

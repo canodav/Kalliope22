@@ -26,48 +26,62 @@ transform set_lespere:
     zoom 0.5
 
 
+# EFECTES: 
 # Fade to black and back.
 define fade = Fade(0.5, 0.0, 0.5)
-
 # Hold at black for a bit.
 define fadehold = Fade(0.5, 1.2, 0.5)
-
 # Camera flash - quickly fades to white, then back to the scene.
 define flash = Fade(0.1, 1.2, 0.5, color="#fff")
 
+
+#ESTILS PERSONATGES: 
+style p_hollis is text:
+    size 20
+    color "#fd1010fd"  
+
+#VIDEOS INTRODUCCIÓ: 
+image anim1 = Movie(channel="movie_dp", play = "ACTO1-2.ogv", loop = False)
+
+
 # El juego comienza aquí.
-
-
 label start:
     scene intro
+    jump test1
 
     #Primera cinematica
     $ renpy.movie_cutscene("ACTO1-2.ogv")
     #fade efect
     with fade
 
-    #Primera cinematica
-    $ renpy.movie_cutscene("ACTO1-2.ogv")
+    #Segunda cinematica
+    show anim1
+    "Lo tenemos. Ponemos rumbo de vuelta a casa. {w=1.5}{nw}"
+
     #fade final efect
     with fadehold
 
-    
+
     jump test1
 
 #label menu:
 
+
 label test1: 
     scene wa
 
-    show hollis at set_hollis
-    show lespere at set_lespere
+    show hollis at set_hollis 
+    show lespere at set_lespere 
     with moveinright
-    lespere "Dios, estoy dando vueltas. -Alarma: *suena*"(multiple=2)
-    hollis "Ho▃l█a? Alguien me░░ re░ibe?"(multiple=2)
+
+    "{=p_hollis}Lespere: {/=p_hollis} Dios, estoy dando vueltas. -Alarma: *suena*{fast}
+    \n\n{color=#0000ffff}Hollis: {/color} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
 
     hollis "1"
     hollis "2"
-    hollin "3"
+    hollis "3"
+
+    jump t0
 
 
 

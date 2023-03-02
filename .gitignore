@@ -1,0 +1,14 @@
+
+errors.txt
+.DS_Store
+errors.txt
+game/cache/bytecode.rpyb
+game/cache/py3analysis.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt
+game/options.rpyc
+*.save
+game/saves/navigation.json
+game/saves/persistent
+log.txt
+game/tl/None/common.rpymc
