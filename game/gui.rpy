@@ -53,6 +53,8 @@ define gui.interface_text_color = '#ffffff'
 
 
 ## Fonts and Font Sizes ########################################################
+## The font for the menu title
+define gui.text_main_title = "fonts/Megrim-Regular.ttf"
 
 ## The font used for in-game text.
 #define gui.text_font = "DejaVuSans.ttf"

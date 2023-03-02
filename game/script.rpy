@@ -31,6 +31,7 @@ image hollis = "4.png"
 
 # BACKGROUND IMAGES
 image space = "space.jpg"
+image space_1 = "space_1.png"
 
 #Reduir la mida del avatar.
 transform set_hollis:
@@ -44,7 +45,7 @@ transform set_lespere:
     zoom 0.5
 
 transform set_capitan:
-    xalign 0.1
+    xalign 0.05
     yalign 0.7
     zoom 0.5
 
@@ -92,7 +93,7 @@ label start:
 ######################################################################################################
 
 label t0:
-    scene space
+    scene space_1
     # Muestra un personaje: Se usa un marcador de posición. Es posible
     # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
     # 'images'.
