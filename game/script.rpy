@@ -6,7 +6,7 @@ define capitan = Character("Capitan", color = "#25c20dfd" )
 define hollis = Character("Hollis", color = "#e13333fd")
 define lespere = Character("Lespere", color = "#1474dafd")
 
-#ESTILS PERSONATGES: 
+#ESTILS PERSONATGES: ETIQUETA. 
 style s_hollis is text:
     size gui.name_text_size
     color "#e13333fd"  
@@ -28,26 +28,28 @@ image lespere = "3.png"
 image applegate = "2.png"
 image capitan = "1.png"
 image hollis = "4.png"
+
+# BACKGROUND IMAGES
 image space = "space.jpg"
 
 #Reduir la mida del avatar.
 transform set_hollis:
-    xalign 0.7
+    xalign 0.65
     yalign 0.7
     zoom 0.5
 
 transform set_lespere:
-    xalign 0.9
+    xalign 0.85
     yalign 0.7
     zoom 0.5
 
 transform set_capitan:
-    xalign 0.2
+    xalign 0.1
     yalign 0.7
     zoom 0.5
 
 transform set_applegate:
-    xalign 0.9
+    xalign 1.05
     yalign 0.7
     zoom 0.5
 
@@ -67,7 +69,6 @@ image anim1 = Movie(channel="movie_dp", play = "ACTO1-2.ogv", loop = False)
 # El juego comienza aquí.
 label start:
     scene intro
-    jump test1
 
     #Primera cinematica
     $ renpy.movie_cutscene("ACTO1-2.ogv")
@@ -81,77 +82,58 @@ label start:
     #fade final efect
     with fadehold
 
-
-    jump test1
+    jump t0
 
 
 ######################################################################################################
 #label menu:
 
 
-
-######################################################################################################
-label test1: 
-    scene wa
-
-    show hollis at set_hollis 
-    show lespere at set_lespere 
-    with moveinright
-
-    "{=s_lespere}Lespere: {/=s_lespere} Dios, estoy dando vueltas. -Alarma: *suena*{fast}
-    \n\n{=s_hollis}Hollis: {/=s_hollis} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
-
-    hollis "1"
-    hollis "2"
-    hollis "3"
-
-    jump t0
-
-
 ######################################################################################################
 
 label t0:
     scene space
-
     # Muestra un personaje: Se usa un marcador de posición. Es posible
     # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
     # 'images'.
 
-    show capitan at left
+    show capitan at set_capitan
+    #with moveinleft
 
-    show lespere at right
+    show hollis at set_hollis 
+    show lespere at set_lespere 
+    #with moveinright
+    
+    "{=s_lespere}Lespere: {/=s_lespere} Dios, estoy dando vueltas. -Alarma: *suena*{fast}"
 
-    lespere "Dios, estoy dando vueltas. -Alarma: *suena*"
+    "{=s_lespere}Lespere: {/=s_lespere} Dios, estoy dando vueltas. -Alarma: *suena*{fast}
+    \n\n{=s_hollis}Hollis: {/=s_hollis} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
 
     hide lespere
-
-    show hollis at right
-
-    hollis "Ho▃l█a? Alguien me░░ re░ibe?"
-
-    capitan "Joder, cómo ha podido pasar esto. ¿Alguien me recibe?"
+    
+    "\n\n{=s_hollis}Hollis: {/=s_hollis} Ho▃l█a? Alguien me░░ re░ibe?{fast}"
 
     hide hollis
 
-    show applegate at right
+    "{=s_capitan}Capitan: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}"
 
-    applegate "Aa█aaa░█aaa██░█aa"
-
-    hide lespere
-
-    show lespere at right
-
-    lespere "¿Capitán? ¿Applegate? ¿Woode?"
-
-    hide lespere
-
-    show applegate at right
-
-    applegate "fjnagmjsimg—-------"
+    show applegate at set_applegate
+    
+    "{=s_capitan}Capitan: {/=s_capitan} Joder, cómo ha podido pasar esto. ¿Alguien me recibe?{fast}
+    \n\n{=s_applegate}Applegate: {/=s_applegate} Aa█aaa░█aaa██░█aa"
 
     hide applegate
 
-    show hollis at right
+    show lespere at set_lespere
+    lespere "¿Capitán? ¿Applegate? ¿Woode?"
+
+    show applegate at set_applegate
+    "{=s_lespere}Lespere: {/=s_lespere} ¿Capitán? ¿Applegate? ¿Woode?{fast}
+    \n\n{=s_applegate}Applegate: {/=s_applegate} fjnagmjsimg—-------"
+
+    hide applegate
+
+    show hollis at set_hollis
 
     hollis "Un po█co mal, pe█ro te escucho"
     
